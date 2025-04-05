@@ -5,6 +5,9 @@ A smart web app to add, categorize, and search notes with AI features like senti
 ## 🔗 Live Link
 [Open App](https://clever-notes-web.web.app/)
 
+![image](https://github.com/user-attachments/assets/1fee553c-dae5-4e02-a4bd-277629bd43c8)
+
+
 ## ⚙️ Features
 - 📝 Add, edit, delete notes
 - 🏷️ Auto-categorize and tag notes
@@ -24,6 +27,18 @@ A smart web app to add, categorize, and search notes with AI features like senti
 ```bash
 git clone https://github.com/shivamnamdeo0101/clever-notes-web
 cd clever-notes-web
+create .env file in root folder
+
+.env
+REACT_APP_FIREBASE_API_KEY=*******************
+REACT_APP_FIREBASE_AUTH_DOMAIN==*******************
+REACT_APP_FIREBASE_PROJECT_ID==*******************
+REACT_APP_FIREBASE_STORAGE_BUCKET==*******************
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID==*******************
+REACT_APP_FIREBASE_APP_ID==*******************
+OPENAI_API_KEY==*******************
+
+
 npm install
 npm start
 ```
