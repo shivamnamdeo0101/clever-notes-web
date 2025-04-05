@@ -1,0 +1,257 @@
+/*****************************login***************************/
+
+.loginContainer {
+  background-color: #f2f2f2;
+  /* add some properties and values */
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginBox {
+  background-color: #fff;
+  /* add some properties and values */
+  padding: 5rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.loginBox>h2 {
+  font-size: 2rem;
+}
+
+.loginButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.loginButton>img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.loginButton>button {
+  outline: 0;
+  border: 0;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  background: transparent;
+}
+
+/*****************************Home***************************/
+.dashboardRow {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.leftSideBar {
+  border-right: 1px solid #ccc;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+
+}
+
+.leftSideButtons {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.leftSideBar>h2 {
+  font-size: 1rem;
+}
+
+.header {
+  padding: 1rem;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90vw;
+}
+
+.right_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.right_header>img {
+  width: 50px;
+  height: 50px;
+  border-radius: 99px;
+  margin-right: 10px;
+}
+
+.right_header>p {
+  color: red;
+  cursor: pointer;
+}
+
+.plus-container {
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  font-size: 2rem;
+  border-radius: 99px;
+  color: #fff;
+}
+
+.notesgrid {
+  padding:16px;
+ -moz-column-width: 18em;
+ -webkit-column-width:14em;
+  /* Ensures all items align properly */
+}
+
+.notescomp {
+  display: inline-block;
+  width: 95%;
+  border-radius: 10px; 
+  padding: 10px;
+  margin-bottom: 10px;
+  height: 100%;
+}
+.notes_header{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboard_content {
+  flex-direction: column;
+}
+
+
+.notescomp>textarea {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  width: max-content;
+  font-family: "Poppins", sans-serif;
+}
+
+.notescomp>p {
+  font-size: 14px;
+}
+
+.imageUser{
+  width: 40px;
+  height: 40px;
+  background-color: #5074d6;
+  color: #fff;
+  text-align: center;
+  border-radius: 99px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header>div>p{
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.row>i {
+  margin-right: 2px;
+  color: #000;
+  font-size: 12px;
+}
+
+.row>h3 {
+  font-size: 12px;
+  color: #000;
+}
+
+.row>h6 {
+  font-size: 12px;
+  color: #000;
+  font-weight: 300;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.fa-pencil {
+  cursor: pointer;
+}
+
+.button_row>i {
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.loading-container {
+  position: fixed;        /* Overlay entire screen */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent */
+  z-index: 9999;          /* High z-index to appear above all */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.search_bar{
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+
+}
+
+.search_bar>input{
+  padding: 1rem;
+  width: 40%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  outline: 0;
+  border: 0;
+}
+
+.search_bar>button{
+  outline: 0;
+  border: 0;
+  background: rgb(65, 65, 232);
+  color: #fff;
+  padding: 1rem;
+  cursor: pointer;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+}
+
+.search_bar>button:hover{
+  background: rgb(124, 124, 235);
+}

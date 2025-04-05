@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "clever-notes-web",
+    "clever-notes": "clever-notes-web"
+  },
+  "targets": {},
+  "etags": {}
+}
