@@ -171,16 +171,16 @@ export const Notes = ({ setnewNote, newNote, handleLogout }) => {
 
 
 
-                {newNote && <div className='notescomp' style={{ backgroundColor: "#BBDEFB" }}>
+                {newNote && <div className='notescomp noteseditor' style={{ backgroundColor: "#BBDEFB" }}>
 
                     <div className='row'>
-                        <i class="fa fa-hashtag" aria-hidden="true"></i>
-                        <h3> {!editingId ? "New" : "Update"}</h3>
+                        
+                        <h3>Notes Editor</h3>
                     </div>
 
                     <textarea placeholder='please enter you note here...'
                         style={{ width: "100%", resize: "none", overflow: "hidden" }}
-                        rows={2} cols={25}
+                        
                         value={note}
                         onChange={(e) => setNote(e.target.value)}
 
@@ -189,8 +189,8 @@ export const Notes = ({ setnewNote, newNote, handleLogout }) => {
                     <div className='row space-between'>
                         <h6>{timestampToDate(Date.now())}</h6>
                         <div className='button_row row'>
-                            <i onClick={() => clearAll()} class="fa fa-minus" aria-hidden="true"></i>
-                            <i onClick={() => !editingId ? handleAdd() : handleUpdate(editingId)} class="fa fa-check" aria-hidden="true"></i>
+                            <i title="Cancel" onClick={() => clearAll()} class="fa fa-minus" aria-hidden="true"></i>
+                            <i title="Save"onClick={() => !editingId ? handleAdd() : handleUpdate(editingId)} class="fa fa-check" aria-hidden="true"></i>
                         </div>
                     </div>
 
