@@ -34,10 +34,10 @@ const Home = () => {
   return (
     <div className="dashboard">
         <div className="dashboardRow">
-            <LeftsideBar setnewNote={setnewNote} newNote={newNote}/>
+            <LeftsideBar setnewNote={setnewNote} newNote={newNote} handleLogout={handleLogout}/>
             <div className="dashboard_content">
-                <Header handleLogout={handleLogout}/>
-                <Notes  setnewNote={setnewNote} newNote={newNote} />
+                
+                <Notes  setnewNote={setnewNote} newNote={newNote}  />
             </div>
         </div>
        

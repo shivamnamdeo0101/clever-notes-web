@@ -9,7 +9,7 @@ import {
 import { analyzeNote, searchPhrase } from "../service/openai";
 import { useSelector } from "react-redux";
 
-export const Notes = ({ setnewNote, newNote }) => {
+export const Notes = ({ setnewNote, newNote, handleLogout }) => {
 
     const user = useSelector((state) => state.user.user);
 
@@ -55,8 +55,16 @@ export const Notes = ({ setnewNote, newNote }) => {
     };
 
     const handleDelete = async (id) => {
+        if (!user || !user.uid) {
+            console.error("User ID is missing.");
+            return;
+        }
+        if (!id) {
+            console.error("Note ID is missing.");
+            return;
+        }
         setloading(true)
-        await deleteNote(user?.id, id);
+        await deleteNote(user?.uid, id);
         fetchNotes();
         clearAll()
         alert("Notes Deleted")
@@ -84,7 +92,7 @@ export const Notes = ({ setnewNote, newNote }) => {
 
         try {
 
-            await updateNote(user.uid, noteId, { text: note, timestamp: Date.now(), sentiment: res?.sentiment, summary: res?.summary, tag: res?.tag  });
+            await updateNote(user.uid, noteId, { text: note, timestamp: Date.now(), sentiment: res?.sentiment, summary: res?.summary, tag: res?.tag });
             fetchNotes();
             clearAll()
             alert("Notes Updated")
@@ -139,8 +147,9 @@ export const Notes = ({ setnewNote, newNote }) => {
     return (
 
         <div>
-            <div >
+            <div>
                 <div className="search_bar">
+                    <p>Welcome {user?.displayName}</p>
                     <input type="search"
                         value={phrase}
                         onChange={(e) => {
@@ -150,11 +159,13 @@ export const Notes = ({ setnewNote, newNote }) => {
                                 fetchNotes()
                             }
                         }}
-                        placeholder="Search your notes here..."
+                        placeholder="Search your notes phrase here..."
 
                     />
                     <button onClick={() => search()}>Find Phrase</button>
                 </div>
+
+
             </div>
             <div className='notesgrid'>
 
