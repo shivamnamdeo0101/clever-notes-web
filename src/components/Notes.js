@@ -129,8 +129,11 @@ export const Notes = ({ setnewNote, newNote, handleLogout }) => {
 
 
     const search = async () => {
+        setloading(true)
         const res = await searchPhrase(notes, phrase)
         setNotes(res)
+        setloading(false)
+        
     }
 
 

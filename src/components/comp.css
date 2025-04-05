@@ -151,9 +151,6 @@
   justify-content: space-between;
 }
 
-.dashboard_content {
-  flex-direction: column;
-}
 
 
 .notescomp>textarea {
