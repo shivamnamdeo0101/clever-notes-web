@@ -98,6 +98,7 @@ export const Notes = ({ setnewNote, newNote }) => {
         setEditingId(null);
         setNote("");
         setnewNote(false)
+        setloading(false)
     }
 
 
