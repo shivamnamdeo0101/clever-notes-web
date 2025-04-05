@@ -5,7 +5,8 @@ A smart web app to add, categorize, and search notes with AI features like senti
 ## 🔗 Live Link
 [Open App](https://clever-notes-web.web.app/)
 
-![image](https://github.com/user-attachments/assets/1fee553c-dae5-4e02-a4bd-277629bd43c8)
+![image](https://github.com/user-attachments/assets/0ef3255f-f8a2-4675-b201-4d14189ff71b)
+
 
 
 ## ⚙️ Features
