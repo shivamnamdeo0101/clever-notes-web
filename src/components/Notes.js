@@ -150,9 +150,10 @@ export const Notes = ({ setnewNote, newNote, handleLogout }) => {
     return (
 
         <div>
-            <div>
+            <div className="notes_main">
+                <p>Welcome {user?.displayName}</p>
                 <div className="search_bar">
-                    <p>Welcome {user?.displayName}</p>
+                    
                     <input type="search"
                         value={phrase}
                         onChange={(e) => {

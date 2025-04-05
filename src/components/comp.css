@@ -63,6 +63,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  height: 95vh;
+  width: 50px;
 }
 
 .logout_div{
@@ -231,7 +233,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent */
+  background-color: rgba(13, 48, 113, 0.8); /* semi-transparent */
   z-index: 9999;          /* High z-index to appear above all */
   display: flex;
   justify-content: center;
@@ -239,10 +241,20 @@
 
 }
 
+.notes_main{
+  padding: 1rem;
+  padding-bottom: 0;
+  padding-top: 0;
+  background-color: #fff;
+}
+
 .search_bar{
+  display: flex;
+  flex-direction: row;
   padding: 1rem;
   border-radius: 10px;
   background-color: #f8f8f8;
+  width: 85vw;
 }
 
 
