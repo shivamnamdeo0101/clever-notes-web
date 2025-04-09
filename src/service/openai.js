@@ -21,14 +21,6 @@ Respond ONLY with a valid JSON structure like:
 }
 
 Follow these rules:
-- The outermost \`div\` must include a fixed \`width\` and \`height\` based on the image size.
-  - Use exact pixel values from the UI image to define the screen size.
-  - For example:
-    - Mobile UI: \`width: "375px", height: "667px"\`
-    - Tablet UI: \`width: "768px", height: "1024px"\`
-    - Desktop UI: \`width: "1440px", height: "900px"\`
-  - These must be set directly in the \`style\` of the main wrapper.
-
 - Use semantic HTML-like tags such as: \`div\`, \`span\`, \`h1\`–\`h6\`, \`p\`, \`button\`, etc.
 - Include inline \`style\` for each element, defining:
   - Layout: \`display\`, \`flexDirection\`, \`gap\`, etc.

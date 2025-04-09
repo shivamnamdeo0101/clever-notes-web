@@ -20,6 +20,7 @@ const Dashboard = () => {
     };
 
     const sampleStructure = {
+        
         "type": "div",
         "class": "container",
         "style": {
