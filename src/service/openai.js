@@ -4,6 +4,117 @@ import axios from "axios";
 
 
 
+/*********************************Image to react*************************************************************************** */
+
+
+
+export const extractUIJsonFromImage = async (base64Image) => {
+    const prompt = `
+You are a frontend UI/UX expert. Analyze the provided UI image and return its complete layout as a valid JSON structure representing the visual hierarchy and styling of the components.
+
+Respond ONLY with a valid JSON structure like:
+{
+  "type": "div",
+  "class": "container",
+  "style": { ... },
+  "children": [ ... ]
+}
+
+Follow these rules:
+- The outermost \`div\` must include a fixed \`width\` and \`height\` based on the image size.
+  - Use exact pixel values from the UI image to define the screen size.
+  - For example:
+    - Mobile UI: \`width: "375px", height: "667px"\`
+    - Tablet UI: \`width: "768px", height: "1024px"\`
+    - Desktop UI: \`width: "1440px", height: "900px"\`
+  - These must be set directly in the \`style\` of the main wrapper.
+
+- Use semantic HTML-like tags such as: \`div\`, \`span\`, \`h1\`–\`h6\`, \`p\`, \`button\`, etc.
+- Include inline \`style\` for each element, defining:
+  - Layout: \`display\`, \`flexDirection\`, \`gap\`, etc.
+  - Spacing: \`padding\`, \`margin\`
+  - Text styling: \`fontSize\`, \`fontWeight\`, \`color\`
+  - Box styling: \`width\`, \`height\`, \`backgroundColor\`, \`borderRadius\`, \`boxShadow\`, \`border\`
+
+- For any image, icon, or avatar:
+  - Use a \`div\` with correct dimensions and \`backgroundColor\`
+  - Add \`borderRadius: "50%"\` if it’s circular
+
+- For buttons:
+  - Use the \`button\` tag
+  - Include \`padding\`, \`backgroundColor\`, \`color\`, \`border\`, \`borderRadius\`, \`fontSize\`, \`fontWeight\`
+
+- Use meaningful and readable class names like \`card\`, \`card-title\`, \`avatar-wrapper\`, \`primary-btn\`, etc.
+
+- Include visible UI text (titles, labels, buttons, prices, etc.) in a \`"content"\` field inside the appropriate element.
+
+- Reflect the layout hierarchy visually and structurally using nested \`children\`.
+
+Return ONLY the pure JSON — no explanation or extra formatting.
+`;
+
+    
+
+    
+    
+    const payload = {
+      messages: [
+        {
+          role: "user",
+          content: [
+            {
+              type: "text",
+              text: prompt
+            },
+            {
+              type: "image_url",
+              image_url: {
+                url: `${base64Image}` // or image/png based on your image type
+              }
+            }
+          ]
+        }
+      ],
+      temperature: 0.3
+    };
+    
+
+    try {
+        const response = await axios.post("https://test-gpt-us-region.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2024-02-01", payload, {
+            headers: {
+                "accept": "*/*",
+                "accept-language": "en-US",
+                "api-key": "700cf09d92e348bcb358a7264d6b21d3", // 🔑 Replace with secure env var in production
+                "content-type": "application/json"
+            }
+        });
+
+        const jsonStr = response?.data?.choices?.[0]?.message?.content;
+        return JSON.parse(jsonStr);
+    } catch (error) {
+        console.error("Error extracting UI JSON:", error.message);
+        return null;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************************Image to react*************************************************************************** */
+
+
+
+
+
+
 export const analyzeNote = async (note) => {
 
     const prompt = `
@@ -67,9 +178,7 @@ export const analyzeNote = async (note) => {
 };
 
 
-
-
-export const searchPhrase = async (notes,phrase) => {
+export const searchPhrase = async (notes, phrase) => {
 
     const prompt = `
     You are an intelligent assistant. Analyze the provided JSON array of notes and return only those notes where the content, tag, or sentiment is semantically or directly related to the phrase: "${phrase}".
